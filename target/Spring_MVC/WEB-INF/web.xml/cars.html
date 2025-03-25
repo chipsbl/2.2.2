@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    table {
+        width: 50%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 6px;
+        text-align: center;
+    }
+</style>
 <body>
-    <th:block th:each="car : ${cars}">
-        <h1 th:text="${car}"></h1>
-    </th:block>
+<h1>Список машин</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Марка</th>
+        <th>Модель</th>
+        <th>Год выпуска</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.brand}">Марка</td>
+        <td th:text="${car.model}">Модель</td>
+        <td th:text="${car.year}">Год выпуска</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

@@ -12,7 +12,7 @@ import web.service.CarServiceImpl;
 public class CarController {
 
     @GetMapping(value = "/cars")
-    public String printCars(ModelMap model , @RequestParam(value = "count", required = false) Integer count) {
+    public String printCars(ModelMap model, @RequestParam(value = "count", required = false) Integer count) {
         CarService carService = new CarServiceImpl();
         if (count != null) {
             model.addAttribute("cars", carService.listOfCar(count));
